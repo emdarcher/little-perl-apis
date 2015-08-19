@@ -1,0 +1,25 @@
+#%RAML 0.8
+
+title: hex-dec-api
+baseUri: http://localhost:3000/hex-dec
+version: v1
+mediaType: text/plain
+
+/{value}:
+  get:
+    description: gets if value is HEX or DEC
+    responses:
+      200:
+        body:
+          example: HEX
+      400:
+        description: if the value is not HEX or DEC
+  post:
+    description: returns conversion of variable, HEX to DEC & vise-versa
+    responses:
+      200:
+        description: the conversion result
+        body:
+          example: 0x4f
+      400:
+        description: if the value is not HEX or DEC
