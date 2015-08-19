@@ -17,7 +17,7 @@ post '/hex-dec/:value' => sub {
     my $type = get_num_type($value);
     if($type ne 'NaN'){
         return $c->render(text => hex($value)) if ($type eq 'HEX');
-        return $c->render(text => sprintf("%x",$value)) if ($type eq 'DEC'); 
+        return $c->render(text => sprintf("0x%x",$value)) if ($type eq 'DEC'); 
     } 
     return $c->render(data => '', status => 400);
 };
